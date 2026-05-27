@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix clone</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="showcase">
+        
+        <nav class="navbar">
+            <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="Netflix Logo">
+            
+            <div class="nav-buttons">
+                <select class="language-btn">
+                    <option value="english">English</option>
+                    <option value="hindi">हिन्दी</option>
+                </select>
+                <button class="btn btn-primary">Sign In</button>
+            </div>
+        </nav>
+
+        <div class="hero-content">
+            <h1>Unlimited movies, TV shows and more</h1>
+            <h3>Watch anywhere. Cancel anytime.</h3>
+            <p>Ready to watch? Enter your email to create or restart your membership.</p>
+            
+            <form class="email-form">
+                <input type="email" placeholder="Email address" required>
+                <button type="submit" class="btn btn-large">
+                    Get Started <span>&gt;</span>
+                </button>
+            </form>
+        </div>
+
+    </header>
+    <main class="main-content">
+
+        <section class="movie-row">
+            <h2>Trending Now</h2>
+            <div class="row-posters">
+                <img class="poster" src="movie1.png" alt="Movie Poster">
+                <img class="poster" src="movie2.png" alt="Movie Poster">
+                <img class="poster" src="movie3.png" alt="Movie Poster">
+                <img class="poster" src="movie4.png" alt="Movie Poster">
+                <img class="poster" src="movie5.png" alt="Movie Poster">
+                <img class="poster" src="movie6.png" alt="Movie Poster">
+            </div>
+        </section>
+
+        <section class="movie-row">
+            <h2>Only on Netflix</h2>
+            <div class="row-posters">
+                <img class="poster poster-large" src="movie7.png" alt="Large Show Poster">
+                <img class="poster poster-large" src="movie8.png" alt="Large Show Poster">
+                <img class="poster poster-large" src="movie9.png" alt="Large Show Poster">
+                <img class="poster poster-large" src="movie10.png" alt="Large Show Poster">
+                <img class="poster poster-large" src="movie11.png" alt="Large Show Poster">
+                <img class="poster poster-large" src="movie12.png" alt="Large Show Poster">
+            </div>
+        </section>
+
+
+        <section class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            <div class="accordion">
+                
+                <div class="faq-item">
+                    <button class="faq-question">What is Netflix? <span class="icon">+</span></button>
+                    <div class="faq-answer">
+                        <p>Netflix is a streaming service that offers a wide variety of award-winning TV shows, movies, anime, documentaries, and more on thousands of internet-connected devices.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">How much does Netflix cost? <span class="icon">+</span></button>
+                    <div class="faq-answer">
+                        <p>Watch Netflix on your smartphone, tablet, Smart TV, laptop, or streaming device, all for one fixed monthly fee. Plans range from ₹149 to ₹649 a month. No extra costs, no contracts.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">Where can I watch? <span class="icon">+</span></button>
+                    <div class="faq-answer">
+                        <p>Watch anywhere, anytime. Sign in with your Netflix account to watch instantly on the web at netflix.com from your personal computer or on any internet-connected device.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

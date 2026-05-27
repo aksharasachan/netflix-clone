@@ -1,0 +1,314 @@
+/* ==========================================
+   1. GLOBAL STYLES & RESET
+   ========================================== */
+* {
+    box-sizing: border-box; /* Ensures padding doesn't affect final width */
+    margin: 0;              /* Removes default browser margins */
+    padding: 0;             /* Removes default browser paddings */
+}
+
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: #000000; /* Fallback black color */
+    color: #ffffff;            /* Global text color set to white */
+    -webkit-font-smoothing: antialiased; /* Makes fonts look crisper */
+}
+
+/* ==========================================
+   2. SHOWCASE (BACKGROUND & OVERLAY)
+   ========================================== */
+.showcase {
+    width: 100%;
+    height: 100vh; /* Takes full height of the viewport */
+    position: relative;
+    /* Adding the famous Netflix background asset combined with a dark gradient overlay */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.3) 60%, rgba(0, 0, 0, 0.8) 100%), 
+                url('background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* ==========================================
+   3. NAVIGATION BAR
+   ========================================== */
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Pushes logo to left, buttons to right */
+    align-items: center;           /* Vertically centers items in the nav */
+    padding: 25px 10%;             /* Adds breathability (10% padding on sides) */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;                   /* Keeps nav strictly above the background background */
+}
+
+.logo {
+    width: 140px; /* Exact size control for the brand logo */
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 15px; /* Spacing between Language dropdown and Sign In button */
+}
+
+/* Language Dropdown Styling */
+.language-btn {
+    background: rgba(0, 0, 0, 0.4);
+    color: #fff;
+    border: 1px solid #aaa;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+/* ==========================================
+   4. BUTTONS
+   ========================================== */
+.btn {
+    display: inline-block;
+    background: #e50914; /* Standard Netflix Red */
+    color: #fff;
+    padding: 7px 17px;
+    font-size: 0.9rem;
+    font-weight: 400;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s ease-in; /* Smooth transition for hover effect */
+}
+
+.btn:hover {
+    background: #c11119; /* Slightly darker red on hover */
+}
+
+/* Bigger Red Button for 'Get Started' */
+.btn-large {
+    padding: 14px 30px;
+    font-size: 1.5rem;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* ==========================================
+   5. HERO CONTENT (CENTRAL CALL-TO-ACTION)
+   ========================================== */
+.hero-content {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Dynamic trick to perfectly center horizontally and vertically */
+    text-align: center;
+    width: 100%;
+    max-width: 800px; /* Restricts layout text from stretching too wide */
+    padding: 0 20px;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.hero-content h3 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 25px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+/* ==========================================
+   6. EMAIL SIGNUP FORM
+   ========================================== */
+.email-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Wraps items into a column if screen size is too narrow */
+    gap: 10px;       /* Small space between input field and button */
+}
+
+.email-form input {
+    width: 450px;
+    padding: 16px;
+    background: rgba(0, 0, 0, 0.7);
+    border: 1px solid #8c8c8c;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 1rem;
+}
+
+/* Adds a subtle white highlight when user clicks into the email input box */
+.email-form input:focus {
+    outline: none;
+    border-color: #ffffff;
+}
+
+/* ==========================================
+   7. RESPONSIVE DESIGN (MEDIA QUERIES)
+   ========================================== */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 20px 5%; /* Reduces margin spaces on smaller screens */
+    }
+    
+    .logo {
+        width: 110px;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem; /* Shrinks text size for mobile viewing */
+    }
+
+    .hero-content h3 {
+        font-size: 1.2rem;
+    }
+
+    .email-form {
+        flex-direction: column; /* Stacks input box and button vertically */
+        width: 100%;
+    }
+
+    .email-form input {
+        width: 100%; /* Spans full width on mobile devices */
+    }
+
+    .btn-large {
+        font-size: 1.1rem;
+        padding: 10px 20px;
+    }
+}
+/* ==========================================
+   8. MAIN CONTENT & MOVIE ROWS
+   ========================================== */
+.main-content {
+    background-color: #111111; /* Slightly lighter gray tone than true black for surface contrast */
+    padding: 40px 4%;          /* Top/Bottom spacing and responsive side inset matching the navbar */
+}
+
+.movie-row {
+    margin-bottom: 40px;       /* Pushes rows apart vertically */
+}
+
+.movie-row h2 {
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+/* Horizontal slider tracks */
+.row-posters {
+    display: flex;             /* Lines up movie images side-by-side */
+    overflow-x: scroll;        /* Generates a seamless native side-scrolling track */
+    overflow-y: hidden;        /* Prevents accidental vertical container jitter */
+    padding: 20px 0;           /* Top/bottom clearance ensures hovering cards don't clip */
+    gap: 10px;                 /* Clean margins between image files */
+}
+
+/* Strips native browser scrollbar tracks for a sleek streaming UI layer */
+.row-posters::-webkit-scrollbar {
+    display: none;
+}
+
+/* ==========================================
+   9. POSTER CARD ANIMATIONS
+   ========================================== */
+.poster {
+    width: 100%;
+    max-height: 180px;         /* Establishes dynamic bounding boxes for images */
+    object-fit: cover;         /* Forces rendering aspects to respect boundaries without warping */
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1); /* Custom smooth elastic easing */
+}
+
+/* Micro-interaction scaling effect on active hover focus states */
+.poster:hover {
+    transform: scale(1.08);    /* Scale target dimension upwards safely */
+    z-index: 5;                /* Elevates layers over passive adjacent row elements */
+}
+
+/* Visual variant class dedicated to tall brand original show banners */
+.poster-large {
+    max-height: 280px;
+}
+
+/* ==========================================
+   10. FAQ ACCORDION LAYOUT
+   ========================================== */
+.faq-section {
+    max-width: 800px;
+    margin: 60px auto 20px auto; /* Centers container constraint safely within parent grid bounds */
+    padding: 0 20px;
+}
+
+.faq-section h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.faq-item {
+    background-color: #2d2d2d; /* Authentic neutral medium charcoal container tone */
+    margin-bottom: 10px;       /* Distinct uniform gaps between separate bars */
+    border-radius: 4px;
+}
+
+.faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    color: #ffffff;
+    padding: 24px;
+    font-size: 1.3rem;
+    text-align: left;
+    display: flex;
+    justify-content: space-between; /* Locks titles left, control sign nodes right */
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.faq-question:hover {
+    background-color: #414141; /* Shift highlights subtly for active feedback pointers */
+}
+
+.faq-question .icon {
+    font-size: 2rem;
+    transition: transform 0.3s ease; /* Fluid timing tracking cross-hair states */
+}
+
+/* Dynamic slide panel hidden engine */
+.faq-answer {
+    max-height: 0;             /* Standard layout hiding trick without manipulating visibility */
+    overflow: hidden;          /* Crops absolute content rendering height bounds to 0 */
+    transition: max-height 0.25s cubic-bezier(0.5, 0, 0.1, 1); /* Smooth hardware acceleration track */
+    background-color: #2d2d2d;
+}
+
+.faq-answer p {
+    padding: 0 24px 24px 24px; /* Retains safe tracking spaces inside open cards */
+    font-size: 1.2rem;
+    line-height: 1.5;
+    color: #cccccc;
+}
+
+/* JavaScript Trigger Classes */
+/* When .active is bound to the parent class node, compute full layout expansions */
+.faq-item.active .faq-answer {
+    max-height: 300px;         /* Dynamically recalculates ceiling for smooth slide-down display */
+}
+
+.faq-item.active .icon {
+    transform: rotate(45deg);  /* Rotates the "+" symbol into an "X" automatically */
+}
