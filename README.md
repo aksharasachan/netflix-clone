@@ -3,7 +3,7 @@
 A fully responsive, interactive replica of the Netflix landing page, content rows, and FAQ interface built from scratch using semantic HTML5, modern CSS3 layout engines, and vanilla JavaScript.
 
 ## 🚀 Live Demo
-You can view the live deployed application here: [Insert Your Live Deployment Link Here]
+You can view the live deployed application here: [(https://aksharasachan.github.io/netflix-clone/)]
 
 ---
 
